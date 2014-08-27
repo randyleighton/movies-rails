@@ -2,13 +2,14 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @movie = Movie.new
     render('movies/index.html.erb')
   end
 
-  def new
-    @movie = Movie.new
-    render('movies/new.html.erb')
-  end
+  # def new
+  #   @movie = Movie.new
+  #   render('movies/new.html.erb')
+  # end
 
   def create
     @movie = Movie.create(params[:movie])

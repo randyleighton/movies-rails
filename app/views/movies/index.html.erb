@@ -1,0 +1,15 @@
+<h1>Movie Database</h1>
+
+<ul>
+  <% @movie.each do |movie| %>
+    <li><a href="/movies/<%= @movie.id %>"><%= @movie.name %></a></li>
+  <% end %>
+</ul>
+
+<h2>Enter a Movie</h2>
+<form action="/movies" method="post">
+  <label for="movies_name">Movie Name</label>
+  <input id="movies_name" name="movie[name]" type="text" value="<%=@movies.name %>">
+  <input id="movies_year" name="movie[year]" type="text" value="<%=@movies.year %>">
+<button>Add Movie</button>
+</form>
