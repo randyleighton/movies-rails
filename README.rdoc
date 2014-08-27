@@ -24,12 +24,20 @@ There are many criteria this project will focus on:
 * Does the app use the asset pipeline for CSS?
 ---
 Schema:
-  create_table "categories", force: true do |t|
+create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+  create_table "categories_movies", force: true do |t|
+    t.integer  "categories_id"
+    t.integer  "movies_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
   create_table "movies", force: true do |t|
     t.string   "name"
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
