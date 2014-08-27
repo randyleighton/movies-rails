@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: movies_development
+
+test:
+  adapter: postgresql
+  database: movies_test

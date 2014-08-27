@@ -1,0 +1,35 @@
+#Movie Database
+
+Individual Project by Randy Leighton
+
+This is a Ruby rails project created to focus on ruby on rails assessment criteria in the minimal magic section.
+
+- Created in Ruby 2.0.0, Rails 4.1.5
+- Utilizes Bundle gem to manage gem dependencies
+- Database utilized: PostgreSQL
+- Database names: movies_development, movies_test
+- Testing utilizes Rails helper and Rspec 3.0
+
+There are many criteria this project will focus on:
+1. Does your code continue to meet all of the standards from last week?
+2. Are your routes RESTful?
+3. Is there a route for the homepage?
+4. Is your application logic in the models, and do controllers do as little work as possible?
+5. Do you properly use render and redirect?
+6. Are your parameters nested?
+7. Do your forms display errors properly?
+8. Does the user see a flash message after successful form submissions?
+9. Is reused view code factored into partials?
+10. Does the app use the asset pipeline for CSS?
+
+
+Schema:
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  create_table "movies", force: true do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
