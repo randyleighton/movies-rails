@@ -24,6 +24,7 @@ There are many criteria this project will focus on:
 * Does the app use the asset pipeline for CSS?
 ---
 Schema:
+create table
 create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
