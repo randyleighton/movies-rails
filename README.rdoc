@@ -1,7 +1,7 @@
 =Movie Database
 
 ==Individual Project by Randy Leighton
----
+
 This is a Ruby rails project created to focus on ruby on rails assessment criteria in the minimal magic section.
 
 - Created in Ruby 2.0.0, Rails 4.1.5
