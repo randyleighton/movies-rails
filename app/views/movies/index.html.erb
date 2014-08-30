@@ -15,16 +15,13 @@
   <div class="row">
     <h3>Enter a Movie</h3>
     <form action="/movies" method="post">
-      <label for="movies_name">Movie Name</label>
-      <input id="movies_name" name="movie[name]" type="text" value="<%= @movie.name %>">
-      <label for="movies_year">Year Released</label>
-      <input id="movies_year" name="movie[year]" type="text" value="<%= @movie.year %>">
+      <%= render('/layouts/form', :object => @categories) %>
     <button class="btn btn-success">Add Movie</button>
     </form>
   </div>
 
   <div class="row">
-    <button id="category_btn" class="btn btn-info">Category Management</button>
+    <a href="/categories/"><button id="category_btn" class="btn btn-info">Category Management</button></a>
   </div>
 
 </div>

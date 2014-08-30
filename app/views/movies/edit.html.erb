@@ -1,22 +1,21 @@
-<h2>Movie Detail</h2>
-<p>Movie Title: <%= @movie.name %></p>
-<p>Year Released: <%= @movie.year %></p>
+<div class="container-fluid">
+  <div class="row">
+    <h2>Movie Detail</h2>
+    <p>Movie Title: <%= @movie.name %></p>
+    <p>Year Released: <%= @movie.year %></p>
+  </div>
 
-<% if @movie.errors.any? %>
-  <ul>
-    <%= @movie.errors.full_messages.each do |message| %>
-      <li><% message %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <div class="row">
+    <%= render('/layouts/errors', :object => @movie) %>
+  </div>
 
-<h4>Update Movie Details</h4>
+  <div class="row">
+    <h4>Update Movie Details</h4>
+    <form action="/movies/<%= @movie.id %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+        <%= render('/layouts/form', :object => @categories) %>
+      <button class="btn btn-primary">Update</button>
+    </form>
+  </div>
 
-<form action="/movies/<%= @movie.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <label for="movies_name">Movie Name</label>
-  <input id="movies_name" name="movie[name]" type="text" value="<%= @movie.name %>">
-  <label for="movies_year">Year Released</label>
-  <input id="movies_year" name="movie[year]" type="text" value="<%= @movie.year %>">
-  <button class="btn btn-primary">Update</button>
-</form>
+</div>
