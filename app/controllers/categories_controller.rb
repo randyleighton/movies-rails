@@ -1,11 +1,9 @@
 class CategoriesController < ApplicationController
 
   def index
-
-  end
-
-  def new
-
+    @categories = Category.all
+    @category = Category.new
+    render('categories/index.html.erb')
   end
 
   def create

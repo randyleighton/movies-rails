@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class=row>
+    <h2>Movie Database Category Management</h2>
+    <ul>
+      <% @categories.each do |category| %>
+        <li><a href="/movies/<%= category.id %>"><%= category.name %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="row">
+    <%= render('/layouts/errors', :object => @category) %>
+  </div>
+
+  <div class="row">
+    <h3>Enter a Category</h3>
+    <form action="/categories" method="post">
+      <%= render('/layouts/category_form') %>
+    <button class="btn btn-success">Add Category</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <a href="/movies/"><button id="category_btn" class="btn btn-info">Database Management</button></a>
+  </div>
+
+</div>
