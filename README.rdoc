@@ -1,6 +1,6 @@
 =Movie Database
 
-==Individual Project by Randy Leighton
+==authored by Randy Leighton
 
 This is a Ruby rails project created to manage movies. Movies are placed into a movie table then relationally connected to categories in another table. This is based on a many to many relationship.
 
