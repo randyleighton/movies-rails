@@ -15,6 +15,6 @@ match('categories/:id',     {via: [:patch, :put], to: 'categories#update'})
 match('categories/:id',     {via: :delete, to: 'categories#delete'})
 
 match('movies/:id/categories', {via: :post, to: 'assigns#category_to_movie'})
-match('movies/:id/categories/:category_id', {via: :delete, to: 'assigns#category_from_movie'})  
+  match('movies/:id/categories/:category_id', {via: :delete, to: 'assigns#category_removal'})  
 
 end
