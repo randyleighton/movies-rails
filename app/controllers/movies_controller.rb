@@ -30,6 +30,7 @@ class MoviesController < ApplicationController
   end
 
   def update
+    @categories = Category.all
     @movie = Movie.find(params[:id])
     if @movie.update(params[:movie])
       flash[:notice] = "Successful Update."
