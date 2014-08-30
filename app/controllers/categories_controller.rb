@@ -7,7 +7,14 @@ class CategoriesController < ApplicationController
   end
 
   def create
-
+    @categories = Category.all
+    @category = Category.new(params[:category])
+    if @category.save
+      flash[:notice] = "Successful entry."
+      redirect_to('/categories')
+    else
+      render('categories/index.html.erb')
+    end
   end
 
   def show
