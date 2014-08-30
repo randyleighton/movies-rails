@@ -39,10 +39,10 @@ class MoviesController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     @movie = Movie.find(params[:id])
-    @movie.destroy
-    flash[:notice] = "Successful Update."
+    @movie.delete
+    flash[:notice] = "Successful Delete."
     redirect_to('/movies')
   end
 
