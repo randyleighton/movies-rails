@@ -3,11 +3,20 @@
     <h2>Movie Detail</h2>
     <p>Movie Title: <%= @movie.name %></p>
     <p>Year Released: <%= @movie.year %></p>
+    <p>Categories:</p>
+    <% if @movie.categories.length == 0 %>
+      <li>None yet!</li>
+    <% else %>
+      <ul>
+        <% @movie.categories.each do |category|%>
+          <li><%= category.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <br>
     <span class="glyphicon glyphicon-pencil"><a href="/movies/<%= @movie.id %>/edit">Edit</a>
     <span class="glyphicon glyphicon-remove-circle"></span><a href="/movies/<%= @movie.id %>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a>
   </div>
-
-  <br>
 
   <div class="row">
     <a href="/movies"><button class="btn btn-primary">Main Menu</button</a>

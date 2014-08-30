@@ -9,13 +9,27 @@
     <% else %>
       <ul>
         <% @movie.categories.each do |category|%>
-          <li><a href=""><%= category.name %></a><a href="/movies/<%= @movie.id %>/categories/<%= category.id %>" 
-                                                    data-confirm="You sure?" data-method="delete" rel="nofollow">(delete)</a></li>
+          <li><a href="/categories/<%= category.id %>"><%= category.name %></a>
+              <span class="glyphicon glyphicon-remove-circle"></span> 
+              <a href="/movies/<%= @movie.id %>/categories/<%= category.id %>" 
+              data-confirm="You sure?" data-method="delete" rel="nofollow">Remove</a></li>
         <% end %>
       </ul>
     <% end %>
   </div>
-
+<br>
+  <div class="row">
+    <h4>Add a category</h4>
+      <form action="/movies/<%= @movie.id %>/categories" method="post">
+        <select name="category">
+          <% @categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select>
+        <button>Add</button>
+      </form>
+  </div>
+  <br>
   <div class="row">
     <%= render('/layouts/errors', :object => @movie) %>
   </div>
@@ -27,18 +41,6 @@
         <%= render('/layouts/form', :object => @categories) %>
       <button class="btn btn-primary">Update</button>
     </form>
-  </div>
-
-  <div class="row">
-    <h4>Add a category</h4>
-      <form action="/movies/<%= @movie.id %>/categories" method="post">
-        <select name="category">
-          <% @categories.each do |category| %>
-          <option value="<%= category.id %>"><%= category.name %></option>
-          <% end %>
-        </select>
-        <button>Add</button>
-      </form>
   </div>
   
 </div>
