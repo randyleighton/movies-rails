@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
 
   end
 
