@@ -15,7 +15,7 @@ There are many criteria this project will focus on:
 * Routes are created to utilize RESTful format.
 * There is a route for the homepage.
 * Render and redirecting are being utilized in the controller with flash messages.
-* Is your application logic in the models, and do controllers do as little work as possible?
+* Application logic in the models, and controllers do as little work as possible.
 * Parameters are utilizing the better parameters nesting format. The movie controller is using the params[:movie] format.
 * Forms display errors correctly, including the refactor for partials.
 * Flash message is in place for new record creation, record updating, and deleting.
@@ -23,21 +23,18 @@ There are many criteria this project will focus on:
 * App utilizes the asset pipeline for CSS. Bootstrap is setup and configured to run. The app/assets/stylesheets/application.css.scss file is renamed and contains css.
 ---
 Schema:
-create table
-create_table "categories", force: true do |t|
+  table "categories"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-  create_table "categories_movies", force: true do |t|
+  table "categories_movies"
     t.integer  "categories_id"
     t.integer  "movies_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-  create_table "movies", force: true do |t|
+  table "movies"
     t.string   "name"
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
+---
