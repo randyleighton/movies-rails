@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2>Category Detail</h2>
+    <p>Name: <%= @category.name %></p>
+  </div>
+
+  <div class="row">
+    <%= render('/layouts/errors', :object => @category) %>
+  </div>
+
+  <div class="row">
+    <h4>Update Category Details</h4>
+    <form action="/categories/<%= @category.id %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+        <%= render('/layouts/category_form') %>
+      <button class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
+</div>

@@ -23,11 +23,19 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-
+    @category = Category.find(params[:id])
+    render('edit.html.erb')
   end
 
   def update
+    @category = Category.find(params[:id])
+    if @category.update(params[:category])
+      flash[:notice] = "Successful Update"
+      redirect_to("/categories/#{@category.id}")
+    else
+      render('categories/edit.html.erb')
 
+    end
   end
 
   def destroy
