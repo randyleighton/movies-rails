@@ -4,11 +4,13 @@
 
 This is a Ruby rails project created to manage movies. Movies are placed into a movie table then relationally connected to categories in another table. This is based on a many to many relationship.
 
-- Created in Ruby 2.0.0, Rails 4.1.5
-- Utilizes Bundle gem to manage gem dependencies
-- Database utilized: PostgreSQL
-- Database names: movies_development, movies_test
-- Testing utilizes Rails helper, rspec 3.0.4, and rspec-rails 3.0.2
+The main goal of this program is to be able to categorize movies and view the movies and their categories.
+---
+* Created in Ruby 2.0.0, Rails 4.1.5
+* Utilizes Bundle gem to manage gem dependencies
+* Database utilized: PostgreSQL
+* Database names: movies_development, movies_test
+* Testing utilizes Rails helper, rspec 3.0.4, and rspec-rails 3.0.2
   (if gem versions are lower than these try to use "bundle update")
 ---
 There are many criteria this project will focus on:
