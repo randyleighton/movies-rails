@@ -1,24 +1,25 @@
-<h1>Movie Database</h1>
+<div class="container-fluid">
+  <div class=row>
+    <h2>Movie Database</h2>
+    <ul>
+      <% @movies.each do |movie| %>
+        <li><a href="/movies/<%= movie.id %>"><%= movie.name %> (<%= movie.year %>)</a></li>
+      <% end %>
+    </ul>
+  </div>
 
-<ul>
-  <% @movies.each do |movie| %>
-    <li><a href="/movies/<%= movie.id %>"><%= movie.name %> (<%= movie.year %>)</a></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <%= render('/layouts/errors', :object => @movie) %>
+  </div>
 
-<% if @movie.errors.any? %>
-  <ul>
-    <%= @movie.errors.full_messages.each do |message| %>
-      <li><% message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<h2>Enter a Movie</h2>
-<form action="/movies" method="post">
-  <label for="movies_name">Movie Name</label>
-  <input id="movies_name" name="movie[name]" type="text" value="<%= @movie.name %>">
-  <label for="movies_year">Year Released</label>
-  <input id="movies_year" name="movie[year]" type="text" value="<%= @movie.year %>">
-<button>Add Movie</button>
-</form>
+  <div class="row">
+    <h3>Enter a Movie</h3>
+    <form action="/movies" method="post">
+      <label for="movies_name">Movie Name</label>
+      <input id="movies_name" name="movie[name]" type="text" value="<%= @movie.name %>">
+      <label for="movies_year">Year Released</label>
+      <input id="movies_year" name="movie[year]" type="text" value="<%= @movie.year %>">
+    <button class=btn btn-success>Add Movie</button>
+    </form>
+  </div>
+</div>
