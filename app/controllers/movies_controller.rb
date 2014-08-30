@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
 
   def create
     @movies = Movie.all
+    @categories = Category.all
     @movie = Movie.new(params[:movie])
     if @movie.save
       flash[:notice] = "Successful Entry."
