@@ -26,6 +26,7 @@ class MoviesController < ApplicationController
 
   def edit
     @movies= Movie.all
+    @categories = Category.all
     @movie = Movie.find(params[:id])
     render('movies/edit.html.erb')
   end

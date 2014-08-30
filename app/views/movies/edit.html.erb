@@ -3,6 +3,17 @@
     <h2>Movie Detail</h2>
     <p>Movie Title: <%= @movie.name %></p>
     <p>Year Released: <%= @movie.year %></p>
+    <p>Categories:</p>
+    <% if @movie.categories.length == 0 %>
+      <li>No categories</li>
+    <% else %>
+      <ul>
+        <% @movie.categories.each do |category|%>
+          <li><a href=""><%= category.name %></a><a href="/movies/<%= @movie.id %>/categories/<%= category.id %>" 
+                                                    data-confirm="You sure?" data-method="delete" rel="nofollow">(delete)</a></li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 
   <div class="row">
@@ -20,7 +31,14 @@
 
   <div class="row">
     <h4>Add a category</h4>
-    
+      <form action="/movies/<%= @movie.id %>/categories" method="post">
+        <select name="category">
+          <% @categories.each do |category| %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select>
+        <button>Add</button>
+      </form>
   </div>
   
 </div>
