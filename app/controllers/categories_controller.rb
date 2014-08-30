@@ -18,7 +18,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @category = Category.find(params[:id])
+    render('categories/show.html.erb')
   end
 
   def edit

@@ -8,5 +8,6 @@ match('movies/:id',     {via: [:patch, :put], to: 'movies#update'})
 
 match('categories',     {via: :get, to: 'categories#index'})
 match('categories', {via: :post, to: 'categories#create'})
+match('categories/:id', {via: :get, to: 'categories#show'})
 
 end
