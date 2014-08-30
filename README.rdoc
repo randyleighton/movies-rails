@@ -2,7 +2,7 @@
 
 ==Individual Project by Randy Leighton
 
-This is a Ruby rails project created to focus on ruby on rails assessment criteria in the minimal magic section.
+This is a Ruby rails project created to manage movies. Movies are placed into a movie table then relationally connected to categories in another table. This is based on a many to many relationship.
 
 - Created in Ruby 2.0.0, Rails 4.1.5
 - Utilizes Bundle gem to manage gem dependencies
@@ -12,16 +12,15 @@ This is a Ruby rails project created to focus on ruby on rails assessment criter
   (if gem versions are lower than these try to use "bundle update")
 ---
 There are many criteria this project will focus on:
-* Does your code continue to meet all of the standards from last week?
-* Are your routes RESTful?
-* Is there a route for the homepage?
+* Routes are created to utilize RESTful format.
+* There is a route for the homepage.
+* Render and redirecting are being utilized in the controller with flash messages.
 * Is your application logic in the models, and do controllers do as little work as possible?
-* Do you properly use render and redirect?
-* Are your parameters nested?
-* Do your forms display errors properly?
-* Does the user see a flash message after successful form submissions?
-* Is reused view code factored into partials?
-* Does the app use the asset pipeline for CSS?
+* Parameters are utilizing the better parameters nesting format. The movie controller is using the params[:movie] format.
+* Forms display errors correctly, including the refactor for partials.
+* Flash message is in place for new record creation, record updating, and deleting.
+* Reused code for error checking and forms is refactored into partials.
+* App utilizes the asset pipeline for CSS. Bootstrap is setup and configured to run. The app/assets/stylesheets/application.css.scss file is renamed and contains css.
 ---
 Schema:
 create table

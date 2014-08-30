@@ -31,9 +31,9 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    if @move.update(params[:id])
+    if @movie.update(params[:movie])
       flash[:notice] = "Successful Update."
-      redirect_to('movies/show.html.erb')
+      redirect_to("/movies/#{@movie.id}")
     else
       render('edit.html.erb')
     end
