@@ -9,7 +9,7 @@
     <% else %>
       <ul>
         <% @movie.categories.each do |category|%>
-          <li><a href="/categories/<%= category.id %>"><%= category.name %></a>
+          <li><%= category.name %>
               <span class="glyphicon glyphicon-remove-circle"></span> 
               <a href="/movies/<%= @movie.id %>/categories/<%= category.id %>" 
               data-confirm="You sure?" data-method="delete" rel="nofollow">Remove</a></li>
