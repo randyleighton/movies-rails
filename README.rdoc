@@ -20,6 +20,7 @@ Web Browser Address => http://localhost:3000/
   (if gem versions are lower than these try to use "bundle update")
 ---
 There are many criteria this project will focus on:
+*This project is pushed to heroku
 * Routes are created to utilize RESTful format.
 * There is a route for the homepage.
 * Render and redirecting are being utilized in the controller with flash messages.
@@ -36,8 +37,8 @@ Schema:
     t.datetime "created_at"
     t.datetime "updated_at"
   table "categories_movies"
-    t.integer  "categories_id"
-    t.integer  "movies_id"
+    t.integer  "category_id"
+    t.integer  "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   table "movies"
