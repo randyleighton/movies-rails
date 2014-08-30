@@ -1,8 +1,8 @@
 <h2>Movie Detail</h2>
-<p>Movie Title: <% @movie.name %></p>
-<p>Year Released: <% @movie.year %></p>
+<p>Movie Title: <%= @movie.name %></p>
+<p>Year Released: <%= @movie.year %></p>
 
-<a href="/movies/<%= movie.id %>/edit">Edit movie Details</a>
+<a href="/movies/<%= @movie.id %>/edit">Edit movie Details</a>
 
 <br><br>
 <a href="/movies">Return to Main</a>

@@ -4,7 +4,7 @@
 
 <ul>
   <% @movies.each do |movie| %>
-    <li><a href="/movies/<%= movie.id %>"><%= movie.name %></a></li>
+    <li><a href="/movies/<%= movie.id %>"><%= movie.name %> (<%= movie.year %>)</a></li>
   <% end %>
 </ul>
 
@@ -22,5 +22,5 @@
   <input id="movies_name" name="movie[name]" type="text" value="<%= @movie.name %>">
   <label for="movies_year">Year Released</label>
   <input id="movies_year" name="movie[year]" type="text" value="<%= @movie.year %>">
-<button>Add Movie</button>
+<button>Update</button>
 </form>

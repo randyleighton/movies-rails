@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @movie = Movie.new(params[:movie])
     if @movie.save
+      flash[:notice] = "Successful Entry."
       redirect_to('/movies')
     else
       render('movies/index.html.erb')
@@ -23,6 +24,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
+    @movies= Movie.all
     @movie = Movie.find(params[:id])
     render('movies/edit.html.erb')
   end
@@ -30,6 +32,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @move.update(params[:id])
+      flash[:notice] = "Successful Update."
       redirect_to('movies/show.html.erb')
     else
       render('edit.html.erb')
@@ -39,7 +42,8 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    render('destroy.html.erb')
+    flash[:notice] = "Successful Update."
+    redirect_to('/movies')
   end
 
 end
