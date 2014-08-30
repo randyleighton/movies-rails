@@ -13,5 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#category_btn {
+margin: 12px;
+}
