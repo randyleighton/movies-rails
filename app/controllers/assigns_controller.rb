@@ -1,6 +1,7 @@
 class AssignsController < ApplicationController
   
   def category_to_movie
+    params.inspect
     @movie = Movie.find(params[:id])
     @category = Category.find(params[:category])
     @movie.categories << @category
@@ -9,6 +10,7 @@ class AssignsController < ApplicationController
   end
 
   def category_removal
+    params.inspect
     @movie = Movie.find(params[:id])
     @category = Category.find(params[:category_id])
     @movie.categories.delete(@category)

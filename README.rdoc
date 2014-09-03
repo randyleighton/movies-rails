@@ -8,7 +8,6 @@ To run this locally:
 $ git clone https://github.com/randyleighton/movies-rails.git
 $ rake db:create
 $ rake db:migrate
-$ rake db:seed
 $ rails server
 Web Browser Address => http://localhost:3000/
 ---
@@ -20,7 +19,7 @@ Web Browser Address => http://localhost:3000/
   (if gem versions are lower than these try to use "bundle update")
 ---
 There are many criteria this project will focus on:
-*This project is pushed to heroku
+*This project is pushed to heroku at http://damp-reef-7807.herokuapp.com/
 * Routes are created to utilize RESTful format.
 * There is a route for the homepage.
 * Render and redirecting are being utilized in the controller with flash messages.
